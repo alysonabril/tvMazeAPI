@@ -14,8 +14,8 @@ final class ShowAPIClient {
     
     static let shared = ShowAPIClient()
     
-    func getShows(completionHandler: @escaping (Result<[ShowResults],AppError>) -> ()) {
-        let urlString = "http://api.tvmaze.com/search/shows?q=girls"
+    func getShows(searchTerm: String, completionHandler: @escaping (Result<[ShowResults],AppError>) -> ()) {
+        let urlString = "http://api.tvmaze.com/search/shows?q=\(searchTerm.lowercased())"
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.badURL))
             return

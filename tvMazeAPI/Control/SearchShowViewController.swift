@@ -4,8 +4,9 @@
 import UIKit
 
 class SearchShowViewController: UIViewController {
-
+    
     @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var showsSearchBar: UISearchBar!
     
     var shows = [ShowResults]() {
         didSet {
@@ -15,6 +16,13 @@ class SearchShowViewController: UIViewController {
         }
     }
     
+    var searchText: String? = nil  {
+        didSet {
+            searchTableView.reloadData()
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -22,19 +30,22 @@ class SearchShowViewController: UIViewController {
     
     private func configureTableView() {
         searchTableView.dataSource = self
+        showsSearchBar.delegate = self
         loadData()
     }
     private func loadData() {
-        ShowAPIClient.shared.getShows { result in
+        guard let searchText = searchText else {return}
+        ShowAPIClient.shared.getShows(searchTerm: searchText) { result in
             switch result {
             case let .success(show):
-                    self.shows = show
+                self.shows = show
             case .failure:
                 print(AppError.noDataReceived)
             }
         }
     }
-
+    
+    
 }
 
 extension SearchShowViewController: UITableViewDataSource {
@@ -49,7 +60,7 @@ extension SearchShowViewController: UITableViewDataSource {
         cell.searchShowName?.text = show.name
         guard let imageURL = show.image?.medium else {return cell}
         ImageHelper.shared.getImage(urlString: imageURL) { result in
-                
+            
             switch result {
             case .failure(let error):
                 print(error)
@@ -64,5 +75,12 @@ extension SearchShowViewController: UITableViewDataSource {
     }
     
     
+}
+
+extension SearchShowViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchText = searchBar.text
+        loadData()
+    }
 }
 //cellheight = 320
