@@ -31,12 +31,10 @@ struct ShowResults: Codable {
 
     }
     
-//}
 
 struct Show: Codable {
     let id: Int
     let name: String
-    //let genres: [String]
     let rating: Rating?
     let image: ImageWrapper?
 }
@@ -48,5 +46,4 @@ struct Rating: Codable {
 
 struct ImageWrapper: Codable {
     let medium: String
-    let original: String
 }

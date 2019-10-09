@@ -45,7 +45,12 @@ class SearchShowViewController: UIViewController {
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       guard let destination = segue.destination as? ShowDVC,
+             let indexPath = searchTableView.indexPathForSelectedRow else {return}
+         let selectedShow = shows[indexPath.row]
+         destination.show = selectedShow
+    }
 }
 
 extension SearchShowViewController: UITableViewDataSource {
@@ -70,11 +75,8 @@ extension SearchShowViewController: UITableViewDataSource {
                 }
             }
         }
-        
         return cell
     }
-    
-    
 }
 
 extension SearchShowViewController: UISearchBarDelegate{
