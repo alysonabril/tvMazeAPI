@@ -1,13 +1,14 @@
 import Foundation
 
 enum AppError: Error {
-    case badDJSONError
+    case unauthenticated
+    case invalidJSONResponse
+    case couldNotParseJSON(rawError: Error)
+    case noInternetConnection
     case badURL
-    case networkError
-    case noDataError
-    case badResponse
-    case notFoundError // 404 status code
-    case unauthorized // 403 and 401 status code
-    case other (rawError:String)
-    case badImage
+    case badStatusCode
+    case noDataReceived
+    case notAnImage
+    case couldNotEncode
+    case other(rawError: Error)
 }

@@ -18,19 +18,19 @@ class tvMazeAPITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testModelFromJson() {
-        guard let path = Bundle.main.path(forResource: "shows", ofType: "json") else {
-            print("No Path")
-            return}
-        let url = URL(fileURLWithPath: path)
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let showsArray = try SearchShow.getShow(fromData: data)
-            XCTAssert(showsArray.count > 0, "we have \(showsArray.count) shows")
-        } catch {
-            print(error)
-        }
-    }
+//    func testModelFromJson() {
+//        guard let path = Bundle.main.path(forResource: "shows", ofType: "json") else {
+//            print("No Path")
+//            return}
+//        let url = URL(fileURLWithPath: path)
+//        
+//        do {
+//            let data = try Data(contentsOf: url)
+//            let showsArray = try ShowResults.getShow(fromData: data)
+//            XCTAssert(showsArray.count > 0, "we have \(showsArray.count) shows")
+//        } catch {
+//            print(error)
+//        }
+//    }
 
 }

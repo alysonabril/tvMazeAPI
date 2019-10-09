@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct SearchShow: Codable {
+struct ShowResults: Codable {
     let show: Show
     
-    static func getShow(fromData: Data) throws -> [SearchShow]{
-        var allShows = [SearchShow]()
+    static func getShow(fromData: Data) throws -> [ShowResults]{
+        var allShows = [ShowResults]()
         do {
-            let showInfo = try JSONDecoder().decode([SearchShow].self, from: fromData)
+            let showInfo = try JSONDecoder().decode([ShowResults].self, from: fromData)
             allShows = showInfo
             return allShows
         } catch {

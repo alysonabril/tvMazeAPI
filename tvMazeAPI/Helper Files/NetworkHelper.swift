@@ -1,46 +1,57 @@
 import Foundation
 
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 class NetworkHelper {
-    // TODO: - we'll update this to cache
-    private init (){}
     
-    static let shared = NetworkHelper()
+    // MARK: - Static Properties
     
-    // performs GET requests
-    // Parameters: URL as a String
-    //Complitions: Result with Data in success, AppError in Failure
+    static let manager = NetworkHelper()
     
-    func fetchData (urlString:String, complitionHandler: @escaping (Result<Data,AppError>) -> ()){
-        guard let url = URL(string: urlString) else {
-            complitionHandler(.failure(.badURL))
-            return
-        }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                complitionHandler(.failure(.networkError))
-                return
-            }
-            guard let data = data else {
-                complitionHandler(.failure(.noDataError))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse else {
-                complitionHandler(.failure(.badResponse))
-                return
-            }
-            
-            switch response.statusCode{
-            case 404:
-                complitionHandler(.failure(.notFoundError))
-            case 401, 403:
-                complitionHandler(.failure(.unauthorized))
-            case 200...299:
-                complitionHandler(.success(data))
-            default:
-                complitionHandler(.failure(.other(rawError: "Wrong Status Code")))
+    // MARK: - Internal Properties
+    func performDataTask(endPointURL: URL,
+                         httpBody: Data? = nil,
+                          httpMethod: HTTPMethod,
+                         completionHandler: @escaping ((Result<Data, AppError>) -> Void)) {
+        
+        var request = URLRequest(url: endPointURL)
+        request.httpMethod = httpMethod.rawValue
+        request.httpBody = httpBody
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        urlSession.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    completionHandler(.failure(.noDataReceived))
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse, (200...299) ~= response.statusCode else {
+                    completionHandler(.failure(.badStatusCode))
+                    return
+                }
+                
+                if let error = error {
+                    let error = error as NSError
+                    if error.domain == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet {
+                        completionHandler(.failure(.noInternetConnection))
+                        return
+                    } else {
+                        completionHandler(.failure(.other(rawError: error)))
+                        return
+                    }
+                }
+                completionHandler(.success(data))
             }
             }.resume()
     }
     
+    // MARK: - Private Properties and Initializers
+    
+    private let urlSession = URLSession(configuration: URLSessionConfiguration.default)
+    
+    private init() {}
 }

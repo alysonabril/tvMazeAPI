@@ -12,12 +12,14 @@
 		C6151AD4234D2434009CCAB8 /* tvMazeAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6151AD3234D2434009CCAB8 /* tvMazeAPITests.swift */; };
 		C6151ADC234D268C009CCAB8 /* shows.json in Resources */ = {isa = PBXBuildFile; fileRef = C6151ADB234D268C009CCAB8 /* shows.json */; };
 		C6151ADD234D2698009CCAB8 /* shows.json in Resources */ = {isa = PBXBuildFile; fileRef = C6151ADB234D268C009CCAB8 /* shows.json */; };
+		C6151ADF234D6D2D009CCAB8 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6151ADE234D6D2D009CCAB8 /* ImageHelper.swift */; };
+		C6151AE1234D747A009CCAB8 /* ShowAPIClien.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6151AE0234D747A009CCAB8 /* ShowAPIClien.swift */; };
 		C68BFF8D232A90AF00EDF6C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BFF8C232A90AF00EDF6C8 /* AppDelegate.swift */; };
 		C68BFF8F232A90AF00EDF6C8 /* SearchShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BFF8E232A90AF00EDF6C8 /* SearchShowViewController.swift */; };
 		C68BFF92232A90AF00EDF6C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68BFF90232A90AF00EDF6C8 /* Main.storyboard */; };
 		C68BFF94232A90B100EDF6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68BFF93232A90B100EDF6C8 /* Assets.xcassets */; };
 		C68BFF97232A90B100EDF6C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68BFF95232A90B100EDF6C8 /* LaunchScreen.storyboard */; };
-		C68BFFA1232A910200EDF6C8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BFFA0232A910200EDF6C8 /* Model.swift */; };
+		C68BFFA1232A910200EDF6C8 /* ShowResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BFFA0232A910200EDF6C8 /* ShowResults.swift */; };
 		C68BFFA5232A990300EDF6C8 /* ShowDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BFFA4232A990300EDF6C8 /* ShowDVC.swift */; };
 		C68BFFA7232A991900EDF6C8 /* EpisodeDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BFFA6232A991900EDF6C8 /* EpisodeDVC.swift */; };
 		C68BFFAB232ACAFE00EDF6C8 /* SearchShowTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BFFAA232ACAFE00EDF6C8 /* SearchShowTVCell.swift */; };
@@ -41,6 +43,8 @@
 		C6151AD3234D2434009CCAB8 /* tvMazeAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvMazeAPITests.swift; sourceTree = "<group>"; };
 		C6151AD5234D2434009CCAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6151ADB234D268C009CCAB8 /* shows.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shows.json; sourceTree = "<group>"; };
+		C6151ADE234D6D2D009CCAB8 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		C6151AE0234D747A009CCAB8 /* ShowAPIClien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAPIClien.swift; sourceTree = "<group>"; };
 		C68BFF89232A90AF00EDF6C8 /* tvMazeAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvMazeAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68BFF8C232A90AF00EDF6C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68BFF8E232A90AF00EDF6C8 /* SearchShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShowViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +52,7 @@
 		C68BFF93232A90B100EDF6C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C68BFF96232A90B100EDF6C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C68BFF98232A90B100EDF6C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C68BFFA0232A910200EDF6C8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C68BFFA0232A910200EDF6C8 /* ShowResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResults.swift; sourceTree = "<group>"; };
 		C68BFFA4232A990300EDF6C8 /* ShowDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDVC.swift; sourceTree = "<group>"; };
 		C68BFFA6232A991900EDF6C8 /* EpisodeDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDVC.swift; sourceTree = "<group>"; };
 		C68BFFAA232ACAFE00EDF6C8 /* SearchShowTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShowTVCell.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			children = (
 				C61437FA232BF91D00D81401 /* NetworkHelper.swift */,
 				C61437FD232BF95800D81401 /* AppError.swift */,
+				C6151ADE234D6D2D009CCAB8 /* ImageHelper.swift */,
+				C6151AE0234D747A009CCAB8 /* ShowAPIClien.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -154,7 +160,7 @@
 		C68BFFA3232A911200EDF6C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C68BFFA0232A910200EDF6C8 /* Model.swift */,
+				C68BFFA0232A910200EDF6C8 /* ShowResults.swift */,
 				C68BFFAA232ACAFE00EDF6C8 /* SearchShowTVCell.swift */,
 				C68BFFAC232ACB1200EDF6C8 /* EpisodeTVCell.swift */,
 			);
@@ -273,7 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C61437FB232BF91D00D81401 /* NetworkHelper.swift in Sources */,
-				C68BFFA1232A910200EDF6C8 /* Model.swift in Sources */,
+				C6151AE1234D747A009CCAB8 /* ShowAPIClien.swift in Sources */,
+				C6151ADF234D6D2D009CCAB8 /* ImageHelper.swift in Sources */,
+				C68BFFA1232A910200EDF6C8 /* ShowResults.swift in Sources */,
 				C61437FE232BF95800D81401 /* AppError.swift in Sources */,
 				C68BFF8F232A90AF00EDF6C8 /* SearchShowViewController.swift in Sources */,
 				C68BFFAB232ACAFE00EDF6C8 /* SearchShowTVCell.swift in Sources */,
