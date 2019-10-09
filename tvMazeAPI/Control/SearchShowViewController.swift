@@ -17,6 +17,7 @@ class SearchShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
     }
     
     private func configureTableView() {
@@ -24,6 +25,14 @@ class SearchShowViewController: UIViewController {
         loadData()
     }
     private func loadData() {
+        ShowAPIClient.shared.getShows { result in
+            switch result {
+            case let .success(show):
+                    self.shows = show
+            case .failure:
+                print(AppError.noDataReceived)
+            }
+        }
     }
 
 }
@@ -34,7 +43,24 @@ extension SearchShowViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let show = shows[indexPath.row].show
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchShowTVCell
+        cell.searchShowName?.text = show.name
+        guard let imageURL = show.image?.medium else {return cell}
+        ImageHelper.shared.getImage(urlString: imageURL) { result in
+                
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let image):
+                DispatchQueue.main.async {
+                    cell.searchImage.image = image
+                }
+            }
+        }
+        
+        return cell
     }
     
     

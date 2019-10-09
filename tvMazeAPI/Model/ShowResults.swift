@@ -7,30 +7,38 @@
 //
 
 import Foundation
+import UIKit
+
 
 struct ShowResults: Codable {
     let show: Show
     
-    static func getShow(fromData: Data) throws -> [ShowResults]{
-        var allShows = [ShowResults]()
-        do {
-            let showInfo = try JSONDecoder().decode([ShowResults].self, from: fromData)
-            allShows = showInfo
-            return allShows
-        } catch {
-            print(error)
-            return allShows
+     static func getShows(url: URL,completionHandler: @escaping (Result<[ShowResults],AppError>) -> ()) {
+            NetworkHelper.manager.performDataTask(endPointURL: url, httpMethod:.get) { (result) in
+                switch result {
+                case .failure(let error):
+                    completionHandler(.failure(error))
+                case .success(let dataFromUrl):
+                    do {
+                        let shows = try JSONDecoder().decode([ShowResults].self, from: dataFromUrl)
+                        completionHandler(.success(shows))
+                    } catch {
+                        completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+                    }
+                }
+            }
         }
+
     }
     
-}
+//}
 
 struct Show: Codable {
     let id: Int
     let name: String
     //let genres: [String]
     let rating: Rating?
-    let image: ImageWrapper
+    let image: ImageWrapper?
 }
 
 struct Rating: Codable {
