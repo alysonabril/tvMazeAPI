@@ -47,7 +47,21 @@ extension ShowDVC: UITableViewDataSource {
         let episode = episodes[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath ) as! EpisodeTVCell
         cell.episodeNameLabel?.text = episode.name
-        return cell
+        cell.episodeInfoLabel?.text = "S: \(episode.season)  E: \(episode.episodeNumber)"
+        
+        guard let imageURL = episode.image?.medium else {return cell}
+        ImageHelper.shared.getImage(urlString: imageURL) { result in
+                   
+                   switch result {
+                   case .failure(let error):
+                       print(error)
+                   case .success(let image):
+                       DispatchQueue.main.async {
+                           cell.episodeImage.image = image
+                       }
+                   }
+               }
+               return cell
     }
     
     

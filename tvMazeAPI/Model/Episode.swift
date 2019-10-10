@@ -12,7 +12,7 @@ struct Episode: Codable {
     let name: String
     let season: Int
     let episodeNumber: Int
-    let image: Image
+    let image: Image?
     
     
     enum CodingKeys: String, CodingKey {
