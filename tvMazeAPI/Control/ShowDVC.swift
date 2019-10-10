@@ -34,6 +34,14 @@ class ShowDVC: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let destination = segue.destination as? EpisodeDVC,
+            let indexPath = episodeTableView.indexPathForSelectedRow else {return}
+        let selectedEpisode = episodes[indexPath.row]
+        destination.episodeDetails = selectedEpisode
+    }
 }
 
 extension ShowDVC: UITableViewDataSource {

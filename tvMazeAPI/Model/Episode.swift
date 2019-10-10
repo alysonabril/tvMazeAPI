@@ -13,6 +13,7 @@ struct Episode: Codable {
     let season: Int
     let episodeNumber: Int
     let image: Image?
+    let summary: String
     
     
     enum CodingKeys: String, CodingKey {
@@ -20,6 +21,7 @@ struct Episode: Codable {
         case season
         case episodeNumber = "number"
         case image
+        case summary
     }
     
     static func getEpisodes(url: URL,completionHandler: @escaping (Result<[Episode],AppError>) -> ()) {

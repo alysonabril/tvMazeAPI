@@ -7,96 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6A319889-70D7-4E7F-B1AC-A59C6579C7DF"
+            uuid = "458F19A4-5629-443C-ABC4-3562B0A826CF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "tvMazeAPI/Model/Episode.swift"
+            filePath = "tvMazeAPI/Control/ShowDVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "getEpisodes(url:completionHandler:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5D92505B-F325-4910-A0B1-01A969A31057"
+            uuid = "C6173763-C740-4DFD-B03D-7B797C941DE3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "tvMazeAPI/Model/Episode.swift"
+            filePath = "tvMazeAPI/Control/ShowDVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "getEpisodes(url:completionHandler:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F61A409-C032-4319-A2DC-6CDB272664FB"
+            uuid = "1F78479D-AE32-48E2-836C-D21AF3A5700B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "tvMazeAPI/Model/Episode.swift"
+            filePath = "tvMazeAPI/Control/ShowDVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getEpisodes(url:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4F61A409-C032-4319-A2DC-6CDB272664FB - f83268b2e9e46d4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, tvMazeAPI.AppError&gt;) -&gt; () in static tvMazeAPI.Episode.getEpisodes(url: Foundation.URL, completionHandler: (Swift.Result&lt;Swift.Array&lt;tvMazeAPI.Episode&gt;, tvMazeAPI.AppError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "tvMazeAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alysonabril/Desktop/swiftStuff/projects/tvMazeAPI/tvMazeAPI/Model/Episode.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "228">
-               </Location>
-               <Location
-                  uuid = "4F61A409-C032-4319-A2DC-6CDB272664FB - f83268b2e9e46d4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, tvMazeAPI.AppError&gt;) -&gt; () in static tvMazeAPI.Episode.getEpisodes(url: Foundation.URL, completionHandler: (Swift.Result&lt;Swift.Array&lt;tvMazeAPI.Episode&gt;, tvMazeAPI.AppError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "tvMazeAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alysonabril/Desktop/swiftStuff/projects/tvMazeAPI/tvMazeAPI/Model/Episode.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "264">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "08DAB13F-4639-4DA5-B11C-E52B641E6CC0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tvMazeAPI/Model/Episode.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getEpisodes(url:completionHandler:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
