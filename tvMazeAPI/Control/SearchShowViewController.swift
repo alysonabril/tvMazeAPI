@@ -64,6 +64,8 @@ extension SearchShowViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchShowTVCell
         cell.searchShowName?.text = show.name
+        cell.showRatingLabel?.text = "Rating: " + String(show.rating?.average ?? 0)
+        
         guard let imageURL = show.image?.medium else {return cell}
         ImageHelper.shared.getImage(urlString: imageURL) { result in
             

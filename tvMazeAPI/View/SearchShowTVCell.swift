@@ -12,6 +12,7 @@ class SearchShowTVCell: UITableViewCell {
 
     @IBOutlet weak var searchImage: UIImageView!
     @IBOutlet weak var searchShowName: UILabel!
+    @IBOutlet weak var showRatingLabel: UILabel!
     
     
     

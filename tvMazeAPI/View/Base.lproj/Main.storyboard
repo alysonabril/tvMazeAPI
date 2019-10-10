@@ -48,6 +48,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROy-XE-yHe">
+                                                    <rect key="frame" x="235" y="193" width="159" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yhb-BV-f3i" firstAttribute="trailing" secondItem="1Xf-m1-KVS" secondAttribute="trailingMargin" id="PRS-qo-Pr7"/>
@@ -62,6 +69,7 @@
                                         <connections>
                                             <outlet property="searchImage" destination="hnV-bT-RWD" id="3zM-aW-DJf"/>
                                             <outlet property="searchShowName" destination="yhb-BV-f3i" id="x9f-RG-ZPn"/>
+                                            <outlet property="showRatingLabel" destination="ROy-XE-yHe" id="fIU-1v-yC0"/>
                                             <segue destination="Cy8-Kb-MH2" kind="show" id="wlt-zt-fE9"/>
                                         </connections>
                                     </tableViewCell>
