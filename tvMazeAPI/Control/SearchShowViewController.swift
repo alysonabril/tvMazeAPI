@@ -46,10 +46,11 @@ class SearchShowViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
        guard let destination = segue.destination as? ShowDVC,
-             let indexPath = searchTableView.indexPathForSelectedRow else {return}
-         let selectedShow = shows[indexPath.row]
-         destination.show = selectedShow
+             let indexPath = searchTableView.indexPathForSelectedRow else { return
+        }
+        destination.showID = shows[indexPath.row].show.id    
     }
 }
 
@@ -85,4 +86,3 @@ extension SearchShowViewController: UISearchBarDelegate{
         loadData()
     }
 }
-//cellheight = 320

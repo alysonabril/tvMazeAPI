@@ -3,9 +3,14 @@ import UIKit
 class ShowDVC: UIViewController {
 
     
-    var show: ShowResults!
-    
     @IBOutlet weak var episodeTableView: UITableView!
+    
+    var showID: Int!
+    var episodes = [Episode](){
+        didSet {
+            self.episodeTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,8 +19,19 @@ class ShowDVC: UIViewController {
     
     private func configureTableview() {
         episodeTableView.dataSource = self
+        loadData()
     }
     
+    private func loadData() {
+        EpisodeAPIClient.shared.getEpisodes(id: 1) { result in
+            switch result {
+            case let .success(episode):
+                self.episodes = episode
+            case .failure:
+                print(AppError.noDataReceived)
+            }
+        }
+    }
 }
 
 extension ShowDVC: UITableViewDataSource {
