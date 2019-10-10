@@ -8,13 +8,15 @@ class ShowDVC: UIViewController {
     var showID: Int!
     var episodes = [Episode](){
         didSet {
+            DispatchQueue.main.async {
             self.episodeTableView.reloadData()
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureTableview()
     }
     
     private func configureTableview() {
@@ -23,7 +25,7 @@ class ShowDVC: UIViewController {
     }
     
     private func loadData() {
-        EpisodeAPIClient.shared.getEpisodes(id: 1) { result in
+        EpisodeAPIClient.shared.getEpisodes(id: showID) { result in
             switch result {
             case let .success(episode):
                 self.episodes = episode
@@ -36,13 +38,18 @@ class ShowDVC: UIViewController {
 
 extension ShowDVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return episodes.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let episode = episodes[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath ) as! EpisodeTVCell
+        cell.episodeNameLabel?.text = episode.name
+        return cell
     }
+    
     
     
 }

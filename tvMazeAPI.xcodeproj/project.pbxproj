@@ -147,8 +147,8 @@
 		C68BFF9F232A90F000EDF6C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C68BFFAA232ACAFE00EDF6C8 /* SearchShowTVCell.swift */,
 				C68BFF90232A90AF00EDF6C8 /* Main.storyboard */,
+				C68BFFAA232ACAFE00EDF6C8 /* SearchShowTVCell.swift */,
 				C68BFFAC232ACB1200EDF6C8 /* EpisodeTVCell.swift */,
 			);
 			path = View;
